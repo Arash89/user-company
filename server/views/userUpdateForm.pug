@@ -1,0 +1,20 @@
+- var updateUrl = "http://localhost:7777/updateuserformResult";
+- var addUrl = "http://localhost:7777/adduserformResult"
+
+doctype html
+html(lang="en")
+  head
+    title= updateUser ? "update" : "add"
+    style
+      include ./viewStyle.css
+  body
+    #container
+      h1 In The Name of GOD
+      form(action= updateUser ? updateUrl : addUrl, method="post")
+        input(placeholder="name", name="firstName", id="firstName", type="text")
+        input(placeholder="age", name="age", id="age", type="text")
+        select(id="companyName", name="companyName")
+          each val in companyName
+            option(value= val.id) #{val.companyName}
+        input(type="submit")
+

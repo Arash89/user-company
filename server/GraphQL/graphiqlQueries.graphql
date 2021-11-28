@@ -1,0 +1,102 @@
+# Alireza
+# 61996b223e8a92df1004d7c0
+# Nelin
+# 61991eda2dfb6b6189d17f65
+# AmirReza
+# 61996a7b3e8a92df1004d7bc
+# Hamid Reza
+# 61996acc3e8a92df1004d7be
+# Arashk
+# 619f1e00b41d63dc8974660b
+# Arash
+# 61a022c70d6eb11d250567b8
+# Ashkan
+# 61a023220d6eb11d250567c2
+# Alen
+# 61a16499ea887740315b482e
+
+# Adobe
+# 619dcbd781f09e3a1b837d72
+# Google
+# 619dcc7d81f09e3a1b837d76
+# Apple
+# 619dcc1881f09e3a1b837d74
+
+# mutation {
+#   AddUser(firstName: "Alen", age: 20, companyName: "619dcc1881f09e3a1b837d74") {
+#     id
+#   }
+# }
+
+
+# mutation {
+#   DeleteUser(firstName: "Alen") {
+#     id
+#     firstName
+#     companyName {
+#       companyName
+#     }
+#     age
+#   }
+# }
+
+
+{
+  user(id: "61a023220d6eb11d250567c2") {
+    id
+    firstName
+    age
+    companyName {
+      id
+      companyName
+    }
+  }
+}
+
+# {
+#   user(id: "61996a7b3e8a92df1004d7bc") {
+#     id
+#     firstName
+#     age
+#   }
+# }
+
+
+# {
+# user(id: "619f1e00b41d63dc8974660b") {
+#     id
+#     firstName
+#     age
+#     company {
+#       companyName
+#       id
+#       description
+#     }
+#   }
+
+#     company(id: "619dcc7d81f09e3a1b837d76") {
+#     companyName
+#     description
+#     users {
+#       firstName
+#       age
+#       id
+#     }
+#   }
+
+# }
+
+
+# get companies information
+
+# {
+#       company(id: "619dcc1881f09e3a1b837d74") {
+#     companyName
+#     description
+#     users {
+#       firstName
+#       age
+#       id
+#     }
+#   }
+# }

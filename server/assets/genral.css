@@ -1,0 +1,17 @@
+body {
+    background: #222;
+    color: #aaa;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    max-width: 200px;
+}
+
+input {
+    background: #555;
+    color: #aaa;
+    margin-bottom: 10px;
+}
+
