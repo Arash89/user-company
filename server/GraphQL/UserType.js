@@ -70,6 +70,12 @@ const RootQuery = new GraphQLObjectType({
         // return companyMongooseModel.findById(args.id).clone().catch((err) => console.log(err))
         return await companyMongooseModel.findById(args.id)
       }
+    },
+    users: {
+      type: new GraphQLList(UserType),
+      async resolve(parentValue, args) {
+        return await userMongooseModel.find().select('_id, firstName')
+      }
     }
   }
 })
