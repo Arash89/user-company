@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { datadogLogs } from '@datadog/browser-logs'
 
 import {
   ApolloClient,
@@ -24,6 +25,13 @@ import 'cross-fetch/polyfill';
 const client = new ApolloClient({
   uri: 'http://localhost:4000/',
   cache: new InMemoryCache()
+})
+
+datadogLogs.init({
+  clientToken: 'pubfbc9f2faa508076d49258ec6deee126a',
+  site: 'datadoghq.com',
+  forwardErrorsToLogs: true,
+  sampleRate: 100,
 })
 
 ReactDOM.render(

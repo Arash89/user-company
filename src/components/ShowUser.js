@@ -2,6 +2,7 @@ import React, { useEffect } from "react"
 import { gql, useQuery } from '@apollo/client';
 import { FIND_USERS_ID_QUERY, findUserQuery } from "./queries";
 import Messages from "./Messages";
+import { datadogLogs } from "@datadog/browser-logs";
 
 const RenderData = ({ data }) => {
   console.log('Arash data: ', data)
@@ -32,6 +33,9 @@ const ShowUser = ({ userId }) => {
   console.log('Arash userId is changed: ', userId)
   console.log('data: ', data)
   console.log('error: ', error)
+  if (error) {
+    datadogLogs.logger.error(error.message)
+  }
   // useEffect(() => {
   //   client
   //     .query({
