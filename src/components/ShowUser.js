@@ -1,11 +1,16 @@
 import React, { useEffect } from "react"
 import { gql, useQuery } from '@apollo/client';
-import { findUserQuery } from "./queries";
+import { FIND_USERS_ID_QUERY, findUserQuery } from "./queries";
 import Messages from "./Messages";
 
-const RenderData = ({ data: { user } }) => {
-  console.log('Arash data: ', user)
-  const { firstName, age, companyName: { companyName } } = user
+const RenderData = ({ data }) => {
+  console.log('Arash data: ', data)
+  // const { firstName, age, companyName: { companyName } } = user
+  const user = data?.user
+  const firstName = user?.firstName
+  const companyName = user?.companyName?.companyName
+  const age = user?.age
+
   return (
     <div className="card" style={{ width: "300px" }}>
       <div className="card-divider">
@@ -24,6 +29,9 @@ const RenderData = ({ data: { user } }) => {
 
 const ShowUser = ({ userId }) => {
   const { loading, error, data } = useQuery(findUserQuery(userId));
+  console.log('Arash userId is changed: ', userId)
+  console.log('data: ', data)
+  console.log('error: ', error)
   // useEffect(() => {
   //   client
   //     .query({

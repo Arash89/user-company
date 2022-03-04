@@ -4,8 +4,9 @@ import UsersList from "./UserList";
 import styles from './AppContainer.module.scss'
 
 const AppContainer = () => {
-  const [userId, setUserId] = useState('61996acc3e8a92df1004d7be')
+  const [userId, setUserId] = useState()
   console.log('user Id: ', userId)
+  // console.log("Arash Ids", data)
 
   return (
     <div className={styles.appContainer}>

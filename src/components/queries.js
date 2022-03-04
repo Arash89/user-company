@@ -7,14 +7,26 @@ export const findUserQuery = (userId) => (
               id
               firstName
               age
-              companyName {
-                  id
-                  companyName
-              }
           }
       }
   `
 )
+
+// export const findUserQuery = (userId) => (
+//   gql`
+//       {
+//           user(id: "${userId}") {
+//               id
+//               firstName
+//               age
+//               companyName {
+//                   id
+//                   companyName
+//               }
+//           }
+//       }
+//   `
+// )
 
 export const findUsersIdQuery = () => (
   gql`
@@ -26,3 +38,12 @@ export const findUsersIdQuery = () => (
       }
   `
 )
+
+export const FIND_USERS_ID_QUERY = gql`
+    {
+        users {
+            id
+            firstName
+        }
+    }
+`

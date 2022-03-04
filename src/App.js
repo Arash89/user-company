@@ -4,7 +4,7 @@ import styles from './App.module.scss'
 function App({ gql, client }) {
   return (
     <div className={styles.App}>
-      <AppContainer gql={gql} client={client} />
+      <AppContainer />
     </div>
   );
 }
