@@ -1,3 +1,4 @@
+const tracer = require('dd-trace').init()
 require('custom-env').env()
 const express = require('express')
 const path = require('path')
